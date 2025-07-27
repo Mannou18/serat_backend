@@ -16,6 +16,8 @@ const authController = require('./src/controllers/authController');
 const neotrackRoutes = require('./src/routes/neotrackRoutes');
 const logRoutes = require('./src/routes/logRoutes');
 const statsRoutes = require('./src/routes/statsRoutes');
+const venteRoutes = require('./src/routes/venteRoutes');
+const installmentRoutes = require('./src/routes/installmentRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -49,6 +51,8 @@ app.use('/api/services', serviceRoutes);
 app.use('/api/neotracks', neotrackRoutes);
 app.use('/api/logs', logRoutes);
 app.use('/api/stats', statsRoutes);
+app.use('/api/ventes', venteRoutes);
+app.use('/api/installments', installmentRoutes);
 
 // Swagger setup
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
